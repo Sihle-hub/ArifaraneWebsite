@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sponsor Form</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom styles for the modal */
+        .modal-content {
+            background-color: #5cb85c; /* Green background color */
+            color: #fff; /* White text color */
+        }
+    </style>
+</head>
+<body class="bg-success">
+
+<div class="container">
+   <!-- <h2 class="mt-5">Sponsor Form</h2> -->
+    <!-- Link to trigger the modal -->
+    <a href="#" id="openSponsorModal" style="display:none;">Open Sponsor Form</a> <!-- Hidden link -->
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="sponsorModal" tabindex="-1" role="dialog" aria-labelledby="sponsorModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="sponsorModalLabel">Sponsor Form</h5>
+              
+            </div>
+            <div class="modal-body">
+                <form action="/sponser_form" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="fullName">Full Name:</label>
+                        <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address:</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter phone number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="organization">Organization (optional):</label>
+                        <input type="text" class="form-control" id="organization" name="organization" placeholder="Enter your organization">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea class="form-control" id="message" name="message" rows="3" placeholder="Enter your message"></textarea>
+                    </div>
+					<div class="modal-footer">
+					            
+					             <button type="submit" class="btn btn-light">Submit</button>
+					         </div>
+                </form>
+            </div>
+         
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    // JavaScript to trigger modal on page load
+    $(window).on('load', function() {
+        $('#sponsorModal').modal('show'); // Show the modal
+    });
+</script>
+
+</body>
+</html>
